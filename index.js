@@ -22,4 +22,6 @@ Arena({
   get BullMQ() {
     return BullMQ || (BullMQ = require('bullmq'));
   },
+}, {
+    basePath: process.env.ARENA_BASEPATH || '/',
 });
