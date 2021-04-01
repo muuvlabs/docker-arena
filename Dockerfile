@@ -1,4 +1,4 @@
-FROM node:lts-alpine AS base
+FROM node:14.16.0-alpine3.13 AS base
 
 # - Upgrade alpine packages to avoid possible os vulnerabilities
 # - Tini for Handling Kernel Signals https://github.com/krallin/tini
