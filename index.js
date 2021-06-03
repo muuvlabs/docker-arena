@@ -11,17 +11,20 @@ try {
 
 let Bull, Bee, BullMQ;
 
-Arena({
-  ...config,
-  get Bull() {
-    return Bull || (Bull = require('bull'));
+Arena(
+  {
+    ...config,
+    get Bull() {
+      return Bull || (Bull = require('bull'));
+    },
+    get Bee() {
+      return Bee || (Bee = require('bee-queue'));
+    },
+    get BullMQ() {
+      return BullMQ || (BullMQ = require('bullmq'));
+    },
   },
-  get Bee() {
-    return Bee || (Bee = require('bee-queue'));
-  },
-  get BullMQ() {
-    return BullMQ || (BullMQ = require('bullmq'));
-  },
-}, {
+  {
     basePath: process.env.ARENA_BASEPATH || '/',
-});
+  }
+);
